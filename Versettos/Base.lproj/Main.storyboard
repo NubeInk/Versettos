@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="94S-7J-Mtm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eAx-eJ-aCU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiF-GS-5r8">
-                                <rect key="frame" x="16" y="275" width="343" height="117"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiF-GS-5r8">
+                                <rect key="frame" x="20" y="242" width="560" height="116"/>
                                 <string key="text">Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,8 +30,12 @@
                                     <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="40"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCO-fS-Yxp">
-                                <rect key="frame" x="20" y="571" width="76" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCO-fS-Yxp">
+                                <rect key="frame" x="20" y="532" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="1Cz-EJ-Mui"/>
+                                    <constraint firstAttribute="height" constant="48" id="2wK-nY-uto"/>
+                                </constraints>
                                 <state key="normal" image="instagram.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -40,16 +44,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZT-JF-M1q">
-                                <rect key="frame" x="149" y="571" width="76" height="76"/>
+                                <rect key="frame" x="276" y="532" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Tzs-Xb-SJS"/>
+                                    <constraint firstAttribute="width" constant="48" id="VoF-JH-G6A"/>
+                                </constraints>
                                 <state key="normal" image="facebook.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareToInstagram" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="vHk-Nt-KLW"/>
+                                    <action selector="shareToFacebook:" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="33j-jL-uVA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juan 3:16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27U-OO-h9o">
-                                <rect key="frame" x="16" y="400" width="343" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Juan 3:16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27U-OO-h9o">
+                                <rect key="frame" x="20" y="366" width="560" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -58,20 +66,24 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDS-YV-1T4">
-                                <rect key="frame" x="283" y="28" width="76" height="30"/>
+                                <rect key="frame" x="504" y="28" width="76" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Slide Show"/>
                                 <connections>
                                     <action selector="timerModeHandler" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="lOQ-ww-AaI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-I3-0NP">
-                                <rect key="frame" x="279" y="571" width="76" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-I3-0NP">
+                                <rect key="frame" x="532" y="532" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="DnL-dA-C67"/>
+                                    <constraint firstAttribute="width" constant="48" id="vfu-57-mk9"/>
+                                </constraints>
                                 <state key="normal" image="twitter.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareToInstagram" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="v0L-Qe-rqD"/>
+                                    <action selector="shareToTwitter:" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="RDv-dQ-CLw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,7 +112,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="5tb-Nz-NOt"/>
                     <navigationItem key="navigationItem" title="Title" id="fxk-o1-7ro"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="screenTapGesture" destination="DDH-hH-rFu" id="bNh-Vx-9Vt"/>
                         <outlet property="timerButton" destination="YDS-YV-1T4" id="Wzi-mX-RBU"/>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Social
 
 class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
 {
@@ -93,14 +94,42 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
             }
         } else {
             print("App not available")
-            self.displayError("Por favor instalar la aplicacion de Instagram")
+            self.displayError("Please login to a Instagram account to share.")
+        }
+    }
+    
+    @IBAction func shareToTwitter(sender: UIButton) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+            let compose:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            compose.setInitialText("Shared via Versettos")
+            compose.addImage(self.getScreenImage())
+            self.presentViewController(compose, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func shareToFacebook(sender: UIButton) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+            let compose:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            compose.setInitialText("Shared via Versettos")
+            compose.addImage(self.getScreenImage())
+            self.presentViewController(compose, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
     private func getScreenImage() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, true, 0.0)
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(view.bounds.width, view.bounds.height - 140.0), false, 0.0)
         
         view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        
+        view.drawViewHierarchyInRect(CGRectMake(0, -70, view.bounds.width, view.bounds.height), afterScreenUpdates: true)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
