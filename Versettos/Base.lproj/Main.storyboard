@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hnc-Z2-ZIE">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="nYp-zM-Df9">
+            <objects>
+                <viewController id="Hnc-Z2-ZIE" customClass="HomeController" customModule="Versettos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BKo-Ne-bCQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="94S-7J-Mtm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eAx-eJ-aCU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiF-GS-5r8">
+                                <rect key="frame" x="16" y="275" width="343" height="117"/>
+                                <string key="text">Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="15"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="40"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCO-fS-Yxp">
+                                <rect key="frame" x="20" y="571" width="76" height="76"/>
+                                <state key="normal" image="instagram.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareToInstagram" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="XLS-t6-GE2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZT-JF-M1q">
+                                <rect key="frame" x="149" y="571" width="76" height="76"/>
+                                <state key="normal" image="facebook.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareToInstagram" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="vHk-Nt-KLW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juan 3:16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27U-OO-h9o">
+                                <rect key="frame" x="16" y="400" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDS-YV-1T4">
+                                <rect key="frame" x="283" y="28" width="76" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Slide Show"/>
+                                <connections>
+                                    <action selector="timerModeHandler" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="lOQ-ww-AaI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-I3-0NP">
+                                <rect key="frame" x="279" y="571" width="76" height="76"/>
+                                <state key="normal" image="twitter.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareToInstagram" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="v0L-Qe-rqD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="k6T-I3-0NP" secondAttribute="bottom" constant="20" id="79F-Gn-fAX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HiF-GS-5r8" secondAttribute="leading" id="Avo-RG-utz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6T-I3-0NP" secondAttribute="trailing" id="HTP-d6-hnK"/>
+                            <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="WZT-JF-M1q" secondAttribute="bottom" constant="20" id="OIw-zV-TIu"/>
+                            <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="FCO-fS-Yxp" secondAttribute="bottom" constant="20" id="Oex-jf-FuV"/>
+                            <constraint firstItem="YDS-YV-1T4" firstAttribute="top" secondItem="BKo-Ne-bCQ" secondAttribute="bottom" constant="8" id="SYh-a2-leK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="27U-OO-h9o" secondAttribute="trailing" id="VWS-LK-1yC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HiF-GS-5r8" secondAttribute="trailing" id="WIs-4D-Of3"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FCO-fS-Yxp" secondAttribute="leading" id="ahL-Xj-xkW"/>
+                            <constraint firstItem="27U-OO-h9o" firstAttribute="top" secondItem="HiF-GS-5r8" secondAttribute="bottom" constant="8" id="ikg-cs-ebP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YDS-YV-1T4" secondAttribute="trailing" id="kTe-bn-SlR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="27U-OO-h9o" secondAttribute="leading" id="qq0-bv-Nio"/>
+                            <constraint firstItem="HiF-GS-5r8" firstAttribute="centerY" secondItem="eAx-eJ-aCU" secondAttribute="centerY" id="tYw-vs-4vU"/>
+                            <constraint firstItem="WZT-JF-M1q" firstAttribute="centerX" secondItem="eAx-eJ-aCU" secondAttribute="centerX" id="ywC-Qz-0Fe"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DDH-hH-rFu" appends="YES" id="LmQ-Nb-FDr"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="5tb-Nz-NOt"/>
+                    <navigationItem key="navigationItem" title="Title" id="fxk-o1-7ro"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="screenTapGesture" destination="DDH-hH-rFu" id="bNh-Vx-9Vt"/>
+                        <outlet property="timerButton" destination="YDS-YV-1T4" id="Wzi-mX-RBU"/>
+                        <outlet property="verseContentLabel" destination="HiF-GS-5r8" id="UlF-rN-3qh"/>
+                        <outlet property="verseLocationLabel" destination="27U-OO-h9o" id="9l6-D0-QWL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmI-Nl-1sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DDH-hH-rFu">
+                    <connections>
+                        <action selector="onTapGesture:" destination="Hnc-Z2-ZIE" id="Jv0-qG-3Qu"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2180.5" y="63.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook.png" width="76" height="76"/>
+        <image name="instagram.png" width="76" height="76"/>
+        <image name="twitter.png" width="76" height="76"/>
+    </resources>
+</document>
