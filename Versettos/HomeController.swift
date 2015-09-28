@@ -61,11 +61,11 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         UIView.animateWithDuration(0.5, animations: {
             self.instagramConstraintLeft.constant += self.view.bounds.width
             self.twitterConstraintRight.constant -= self.view.bounds.width
-            self.facebookConstraintBottom.constant -= self.view.bounds.width
+            self.facebookConstraintBottom.constant -= (self.view.bounds.width / 2)
             self.view.layoutIfNeeded()
         })
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("fadeOut"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("fadeOut"), userInfo: nil, repeats: true)
         self.timerButton.setTitle("Stop", forState: .Normal)
         self.isTimerModeActived = true
     }
@@ -176,6 +176,7 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
             animations: {
                 self.verseContentLabel.alpha = 1
                 self.verseLocationLabel.alpha = 1
+                self.brandLabel.alpha = 1
             }, completion: nil)
     }
     
@@ -183,6 +184,7 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         UIView.animateWithDuration(0.3, animations: {
                 self.verseContentLabel.alpha = 0
                 self.verseLocationLabel.alpha = 0
+                self.brandLabel.alpha = 0
                 self.view.backgroundColor = self.colors.randomColor()
             
             }, completion: { finished in
