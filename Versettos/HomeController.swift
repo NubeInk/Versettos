@@ -61,7 +61,7 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         UIView.animateWithDuration(0.5, animations: {
             self.instagramConstraintLeft.constant += self.view.bounds.width
             self.twitterConstraintRight.constant -= self.view.bounds.width
-            self.facebookConstraintBottom.constant -= self.view.bounds.height
+            self.facebookConstraintBottom.constant -= self.view.bounds.width
             self.view.layoutIfNeeded()
         })
         
