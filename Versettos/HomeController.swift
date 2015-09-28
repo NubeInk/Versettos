@@ -15,6 +15,11 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     @IBOutlet weak var verseContentLabel: UILabel!
     @IBOutlet weak var verseLocationLabel: UILabel!
     @IBOutlet weak var timerButton: UIButton!
+    @IBOutlet weak var brandLabel: UILabel!
+
+    @IBOutlet weak var twitterConstraintRight: NSLayoutConstraint!
+    @IBOutlet weak var facebookConstraintBottom: NSLayoutConstraint!
+    @IBOutlet weak var instagramConstraintLeft: NSLayoutConstraint!
     @IBOutlet var screenTapGesture: UITapGestureRecognizer!
     
     var documentController:UIDocumentInteractionController!
@@ -52,14 +57,30 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     }
     
     private func activateTimerMode(){
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.instagramConstraintLeft.constant += self.view.bounds.width
+            self.twitterConstraintRight.constant -= self.view.bounds.width
+            self.facebookConstraintBottom.constant -= self.view.bounds.height
+            self.view.layoutIfNeeded()
+        })
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("fadeOut"), userInfo: nil, repeats: true)
         self.timerButton.setTitle("Stop", forState: .Normal)
         self.isTimerModeActived = true
     }
     
     private func deactivateTimerMode(){
+        
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 8, options: [], animations: {
+                self.instagramConstraintLeft.constant = 0
+                self.twitterConstraintRight.constant = 0
+                self.facebookConstraintBottom.constant = 20
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        
         self.timer.invalidate()
-        self.timerButton.setTitle("Slide Show", forState: .Normal)
+        self.timerButton.setTitle("Play", forState: .Normal)
         self.isTimerModeActived = false
     }
     
@@ -125,6 +146,8 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     }
     
     private func getScreenImage() -> UIImage {
+        self.brandLabel.alpha = 1
+        
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(view.bounds.width, view.bounds.height - 140.0), false, 0.0)
         
         view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
@@ -134,6 +157,8 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
+        
+        self.brandLabel.alpha = 0
         
         return image
     }

@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="94S-7J-Mtm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eAx-eJ-aCU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiF-GS-5r8">
-                                <rect key="frame" x="20" y="242" width="560" height="116"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiF-GS-5r8">
+                                <rect key="frame" x="20" y="321" width="374" height="94"/>
                                 <string key="text">Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,7 +31,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCO-fS-Yxp">
-                                <rect key="frame" x="20" y="532" width="48" height="48"/>
+                                <rect key="frame" x="20" y="668" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="1Cz-EJ-Mui"/>
                                     <constraint firstAttribute="height" constant="48" id="2wK-nY-uto"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZT-JF-M1q">
-                                <rect key="frame" x="276" y="532" width="48" height="48"/>
+                                <rect key="frame" x="183" y="668" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Tzs-Xb-SJS"/>
                                     <constraint firstAttribute="width" constant="48" id="VoF-JH-G6A"/>
@@ -56,8 +56,8 @@
                                     <action selector="shareToFacebook:" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="33j-jL-uVA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Juan 3:16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27U-OO-h9o">
-                                <rect key="frame" x="20" y="366" width="560" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juan 3:16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27U-OO-h9o">
+                                <rect key="frame" x="20" y="423" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -66,15 +66,15 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDS-YV-1T4">
-                                <rect key="frame" x="504" y="28" width="76" height="30"/>
+                                <rect key="frame" x="364" y="28" width="30" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Slide Show"/>
+                                <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="timerModeHandler" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="lOQ-ww-AaI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-I3-0NP">
-                                <rect key="frame" x="532" y="532" width="48" height="48"/>
+                                <rect key="frame" x="346" y="668" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="DnL-dA-C67"/>
                                     <constraint firstAttribute="width" constant="48" id="vfu-57-mk9"/>
@@ -86,6 +86,12 @@
                                     <action selector="shareToTwitter:" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="RDv-dQ-CLw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versetto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0I-4F-hCx">
+                                <rect key="frame" x="20" y="265" width="374" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,12 +100,15 @@
                             <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="k6T-I3-0NP" secondAttribute="bottom" constant="20" id="79F-Gn-fAX"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HiF-GS-5r8" secondAttribute="leading" id="Avo-RG-utz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k6T-I3-0NP" secondAttribute="trailing" id="HTP-d6-hnK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="z0I-4F-hCx" secondAttribute="leading" id="NTU-6F-sXO"/>
                             <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="WZT-JF-M1q" secondAttribute="bottom" constant="20" id="OIw-zV-TIu"/>
                             <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="FCO-fS-Yxp" secondAttribute="bottom" constant="20" id="Oex-jf-FuV"/>
                             <constraint firstItem="YDS-YV-1T4" firstAttribute="top" secondItem="BKo-Ne-bCQ" secondAttribute="bottom" constant="8" id="SYh-a2-leK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="27U-OO-h9o" secondAttribute="trailing" id="VWS-LK-1yC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HiF-GS-5r8" secondAttribute="trailing" id="WIs-4D-Of3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="FCO-fS-Yxp" secondAttribute="leading" id="ahL-Xj-xkW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z0I-4F-hCx" secondAttribute="trailing" id="d9b-P4-A3u"/>
+                            <constraint firstItem="HiF-GS-5r8" firstAttribute="top" secondItem="z0I-4F-hCx" secondAttribute="bottom" constant="8" id="g6P-YD-zKd"/>
                             <constraint firstItem="27U-OO-h9o" firstAttribute="top" secondItem="HiF-GS-5r8" secondAttribute="bottom" constant="8" id="ikg-cs-ebP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YDS-YV-1T4" secondAttribute="trailing" id="kTe-bn-SlR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="27U-OO-h9o" secondAttribute="leading" id="qq0-bv-Nio"/>
@@ -112,9 +121,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="5tb-Nz-NOt"/>
                     <navigationItem key="navigationItem" title="Title" id="fxk-o1-7ro"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="brandLabel" destination="z0I-4F-hCx" id="J8G-BY-LuC"/>
+                        <outlet property="facebookConstraintBottom" destination="OIw-zV-TIu" id="gxo-Q2-dLy"/>
+                        <outlet property="instagramConstraintLeft" destination="ahL-Xj-xkW" id="Ail-mi-BrC"/>
                         <outlet property="screenTapGesture" destination="DDH-hH-rFu" id="bNh-Vx-9Vt"/>
                         <outlet property="timerButton" destination="YDS-YV-1T4" id="Wzi-mX-RBU"/>
+                        <outlet property="twitterConstraintRight" destination="HTP-d6-hnK" id="GPZ-O8-ybj"/>
                         <outlet property="verseContentLabel" destination="HiF-GS-5r8" id="UlF-rN-3qh"/>
                         <outlet property="verseLocationLabel" destination="27U-OO-h9o" id="9l6-D0-QWL"/>
                     </connections>
@@ -126,7 +140,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2180.5" y="63.5"/>
+            <point key="canvasLocation" x="2180" y="63"/>
         </scene>
     </scenes>
     <resources>
