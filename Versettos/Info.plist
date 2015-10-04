@@ -6,27 +6,11 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Share Instagram</string>
+			<string>Share</string>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeShare</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.nubeink.versettos.share.instagram</string>
-		</dict>
-<dict>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Share Facebook</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeShare</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.nubeink.versettos.share.facebook</string>
-		</dict>
-<dict>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Share Twitter</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeShare</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.nubeink.versettos.share.twitter</string>
+			<string>com.nubeink.versettos.share.quickaction</string>
 		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

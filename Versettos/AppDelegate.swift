@@ -45,20 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("At Delegate Handler")
         
         switch (shortcutItem.type){
-            case "com.nubeink.versettos.share.instagram":
+            case "com.nubeink.versettos.share.quickaction":
                 self.shortcutItem = shortcutItem
                 success = true
                 break
-            case "com.nubeink.versettos.share.facebook":
-                self.shortcutItem = shortcutItem
-                success = true
-                break
-            
-            case "com.nubeink.versettos.share.twitter":
-                self.shortcutItem = shortcutItem
-                success = true
-                break
-            
             default:
                 self.shortcutItem = nil
                 success = false

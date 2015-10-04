@@ -137,7 +137,6 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     }
     
     private func getScreenImage() -> UIImage {
-        self.brandLabel.alpha = 1
         
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(view.bounds.width, view.bounds.height - 140.0), false, 0.0)
         
@@ -148,8 +147,6 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
-        
-        self.brandLabel.alpha = 0
         
         return image
     }
@@ -188,20 +185,9 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     }
     
     func quickActionHandler(){
-                switch (shortcutItemType){
-                    case "com.nubeink.versettos.share.instagram":
-                        shareToInstagram()
-                        break
-                    case "com.nubeink.versettos.share.facebook":
-                        shareToFacebook(nil)
-                        break
+        let shareActivity: UIActivityViewController = UIActivityViewController(activityItems: [self.getScreenImage()], applicationActivities: nil);
         
-                    case "com.nubeink.versettos.share.twitter":
-                        shareToTwitter(nil)
-                        break
-                    default:
-                        break
-                }
+        self.presentViewController(shareActivity, animated: true, completion: nil)
         
         self.isQuickActionHandled = true
     }
