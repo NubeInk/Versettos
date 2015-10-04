@@ -14,7 +14,6 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
 {
     @IBOutlet weak var verseContentLabel: UILabel!
     @IBOutlet weak var verseLocationLabel: UILabel!
-    @IBOutlet weak var timerButton: UIButton!
     @IBOutlet weak var brandLabel: UILabel!
 
     @IBOutlet weak var twitterConstraintRight: NSLayoutConstraint!
@@ -23,6 +22,8 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     @IBOutlet var screenTapGesture: UITapGestureRecognizer!
     
     var documentController:UIDocumentInteractionController!
+    var shortcutItemType: String!
+    var isQuickActionHandled = false
     var versiculos = [PFObject]()
     let colors = Colors()
     var timer = NSTimer()
@@ -31,17 +32,19 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.shortcutItemType = delegate.shortcutItem?.type
+        
         self.verseContentLabel.alpha = 0
         self.verseLocationLabel.alpha = 0
         
         self.screenTapGesture = UITapGestureRecognizer(target: self, action:Selector("onTapGesture:"))
         view.addGestureRecognizer(self.screenTapGesture)
-        
+
         let parse = ParseHandler();
         parse.getVersiculosFromParse { (result) -> Void in
             self.versiculos = result;
-            self.displayContent(self.getRandomVerse())
-            self.fadeIn()
+            self.fadeOut()
         }
     }
     
@@ -49,7 +52,6 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         self.verseContentLabel.text = data["content"] as? String
         self.verseLocationLabel.text = data["location"] as? String
         self.fadeIn()
-        
     }
     
     private func getRandomVerse() -> PFObject! {
@@ -66,7 +68,6 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         })
         
         timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("fadeOut"), userInfo: nil, repeats: true)
-        self.timerButton.setTitle("Stop", forState: .Normal)
         self.isTimerModeActived = true
     }
     
@@ -80,20 +81,11 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
             }, completion: nil)
         
         self.timer.invalidate()
-        self.timerButton.setTitle("Play", forState: .Normal)
         self.isTimerModeActived = false
     }
     
     @IBAction func onTapGesture(sender: UITapGestureRecognizer) {
         self.fadeOut()
-    }
-    
-    @IBAction func timerModeHandler() {
-        if isTimerModeActived {
-            self.deactivateTimerMode()
-        } else {
-            self.activateTimerMode()
-        }
     }
     
     @IBAction func shareToInstagram() {
@@ -114,12 +106,11 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
                 self.documentController.presentOpenInMenuFromRect(self.view.frame, inView: self.view, animated: true)
             }
         } else {
-            print("App not available")
             self.displayError("Please login to a Instagram account to share.")
         }
     }
     
-    @IBAction func shareToTwitter(sender: UIButton) {
+    @IBAction func shareToTwitter(sender: UIButton?) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
             let compose:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             compose.setInitialText("Shared via Versettos")
@@ -132,7 +123,7 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         }
     }
     
-    @IBAction func shareToFacebook(sender: UIButton) {
+    @IBAction func shareToFacebook(sender: UIButton?) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
             let compose:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             compose.setInitialText("Shared via Versettos")
@@ -177,7 +168,11 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
                 self.verseContentLabel.alpha = 1
                 self.verseLocationLabel.alpha = 1
                 self.brandLabel.alpha = 1
-            }, completion: nil)
+            }, completion: { finished in
+                if (self.shortcutItemType != nil && self.isQuickActionHandled == false){
+                    self.quickActionHandler()
+                }
+        })
     }
     
     func fadeOut(){
@@ -192,6 +187,25 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
         })
     }
     
+    func quickActionHandler(){
+                switch (shortcutItemType){
+                    case "com.nubeink.versettos.share.instagram":
+                        shareToInstagram()
+                        break
+                    case "com.nubeink.versettos.share.facebook":
+                        shareToFacebook(nil)
+                        break
+        
+                    case "com.nubeink.versettos.share.twitter":
+                        shareToTwitter(nil)
+                        break
+                    default:
+                        break
+                }
+        
+        self.isQuickActionHandled = true
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.becomeFirstResponder()
@@ -203,7 +217,11 @@ class HomeController: UIViewController, UIDocumentInteractionControllerDelegate
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            self.fadeOut()
+            if isTimerModeActived {
+                self.deactivateTimerMode()
+            } else {
+                self.activateTimerMode()
+            }
         }
     }
 }

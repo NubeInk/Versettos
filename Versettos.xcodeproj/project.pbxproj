@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210D89B41BC0BDA6001C1B4C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210D89B31BC0BDA6001C1B4C /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 		2184A8911BB5C1C600DBC6F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2184A8901BB5C1C600DBC6F0 /* AppDelegate.swift */; };
 		2184A8961BB5C1C600DBC6F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2184A8941BB5C1C600DBC6F0 /* Main.storyboard */; };
 		2184A8981BB5C1C600DBC6F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2184A8971BB5C1C600DBC6F0 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210D89B31BC0BDA6001C1B4C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2184A88D1BB5C1C600DBC6F0 /* Versettos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versettos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2184A8901BB5C1C600DBC6F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2184A8951BB5C1C600DBC6F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		2184A8841BB5C1C600DBC6F0 = {
 			isa = PBXGroup;
 			children = (
+				210D89B31BC0BDA6001C1B4C /* Default-568h@2x.png */,
 				2184A8A81BB5C38800DBC6F0 /* Frameworks */,
 				2184A88F1BB5C1C600DBC6F0 /* Versettos */,
 				2184A88E1BB5C1C600DBC6F0 /* Products */,
@@ -282,6 +285,7 @@
 				2184A89B1BB5C1C600DBC6F0 /* LaunchScreen.storyboard in Resources */,
 				21C7FA7F1BB841C1003005C7 /* facebook.png in Resources */,
 				21C7FA881BB84410003005C7 /* logo.png in Resources */,
+				210D89B41BC0BDA6001C1B4C /* Default-568h@2x.png in Resources */,
 				2184A8981BB5C1C600DBC6F0 /* Assets.xcassets in Resources */,
 				21C7FA811BB841C1003005C7 /* twitter.png in Resources */,
 				21C7FA861BB8432B003005C7 /* intro-purple.png in Resources */,

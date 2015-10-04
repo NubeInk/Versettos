@@ -8,7 +8,7 @@
         <!--Title-->
         <scene sceneID="nYp-zM-Df9">
             <objects>
-                <viewController id="Hnc-Z2-ZIE" customClass="HomeController" customModule="Versettos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeControllerSBID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hnc-Z2-ZIE" customClass="HomeController" customModule="Versettos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BKo-Ne-bCQ"/>
                         <viewControllerLayoutGuide type="bottom" id="94S-7J-Mtm"/>
@@ -62,14 +62,6 @@
                                     <rect key="frame" x="20" y="428" width="984" height="30"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDS-YV-1T4">
-                                <rect key="frame" x="20" y="28" width="374" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="timerModeHandler" destination="Hnc-Z2-ZIE" eventType="touchUpInside" id="lOQ-ww-AaI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-I3-0NP">
                                 <rect key="frame" x="346" y="668" width="48" height="48"/>
                                 <constraints>
@@ -99,19 +91,16 @@
                         <constraints>
                             <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="k6T-I3-0NP" secondAttribute="bottom" constant="20" id="79F-Gn-fAX"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HiF-GS-5r8" secondAttribute="leading" id="Avo-RG-utz"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="YDS-YV-1T4" secondAttribute="leading" id="Cl7-oP-tRn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k6T-I3-0NP" secondAttribute="trailing" id="HTP-d6-hnK"/>
                             <constraint firstAttribute="leadingMargin" secondItem="z0I-4F-hCx" secondAttribute="leading" id="NTU-6F-sXO"/>
                             <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="WZT-JF-M1q" secondAttribute="bottom" constant="20" id="OIw-zV-TIu"/>
                             <constraint firstItem="94S-7J-Mtm" firstAttribute="top" secondItem="FCO-fS-Yxp" secondAttribute="bottom" constant="20" id="Oex-jf-FuV"/>
-                            <constraint firstItem="YDS-YV-1T4" firstAttribute="top" secondItem="BKo-Ne-bCQ" secondAttribute="bottom" constant="8" id="SYh-a2-leK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="27U-OO-h9o" secondAttribute="trailing" id="VWS-LK-1yC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HiF-GS-5r8" secondAttribute="trailing" id="WIs-4D-Of3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="FCO-fS-Yxp" secondAttribute="leading" id="ahL-Xj-xkW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z0I-4F-hCx" secondAttribute="trailing" id="d9b-P4-A3u"/>
                             <constraint firstItem="HiF-GS-5r8" firstAttribute="top" secondItem="z0I-4F-hCx" secondAttribute="bottom" constant="8" id="g6P-YD-zKd"/>
                             <constraint firstItem="27U-OO-h9o" firstAttribute="top" secondItem="HiF-GS-5r8" secondAttribute="bottom" constant="8" id="ikg-cs-ebP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YDS-YV-1T4" secondAttribute="trailing" id="kTe-bn-SlR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="27U-OO-h9o" secondAttribute="leading" id="qq0-bv-Nio"/>
                             <constraint firstItem="HiF-GS-5r8" firstAttribute="centerY" secondItem="eAx-eJ-aCU" secondAttribute="centerY" id="tYw-vs-4vU"/>
                             <constraint firstItem="WZT-JF-M1q" firstAttribute="centerX" secondItem="eAx-eJ-aCU" secondAttribute="centerX" id="ywC-Qz-0Fe"/>
@@ -128,7 +117,6 @@
                         <outlet property="facebookConstraintBottom" destination="OIw-zV-TIu" id="gxo-Q2-dLy"/>
                         <outlet property="instagramConstraintLeft" destination="ahL-Xj-xkW" id="Ail-mi-BrC"/>
                         <outlet property="screenTapGesture" destination="DDH-hH-rFu" id="bNh-Vx-9Vt"/>
-                        <outlet property="timerButton" destination="YDS-YV-1T4" id="Wzi-mX-RBU"/>
                         <outlet property="twitterConstraintRight" destination="HTP-d6-hnK" id="GPZ-O8-ybj"/>
                         <outlet property="verseContentLabel" destination="HiF-GS-5r8" id="UlF-rN-3qh"/>
                         <outlet property="verseLocationLabel" destination="27U-OO-h9o" id="9l6-D0-QWL"/>

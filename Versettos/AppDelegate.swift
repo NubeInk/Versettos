@@ -14,7 +14,8 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var selectedShortcut: String?
+    var shortcutItem: UIApplicationShortcutItem?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -22,8 +23,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("eVROJ73fLbqPjUNNnj2DZQ3NueUbEecETY8yVxz7",
             clientKey: "bqe9Sv7ibKlAiBlICuTdQ1uIY1e0CEt6bYnltJcF")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-
-        return true
+        
+        var performShortcutDelegate = true
+        
+        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
+            
+            self.shortcutItem = shortcutItem
+            
+            performShortcutDelegate = false
+        }
+        
+        return performShortcutDelegate
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        completionHandler(quickActionHandler(shortcutItem))
+    }
+    
+    func quickActionHandler(shortcutItem:UIApplicationShortcutItem) -> Bool {
+        var success = false
+        print("At Delegate Handler")
+        
+        switch (shortcutItem.type){
+            case "com.nubeink.versettos.share.instagram":
+                self.shortcutItem = shortcutItem
+                success = true
+                break
+            case "com.nubeink.versettos.share.facebook":
+                self.shortcutItem = shortcutItem
+                success = true
+                break
+            
+            case "com.nubeink.versettos.share.twitter":
+                self.shortcutItem = shortcutItem
+                success = true
+                break
+            
+            default:
+                self.shortcutItem = nil
+                success = false
+                break
+        }
+        
+        // Get the view controller you want to load
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = mainSB.instantiateViewControllerWithIdentifier("HomeControllerSBID") as! HomeController
+        
+        self.window?.rootViewController = homeVC
+        self.window?.makeKeyAndVisible()
+        
+        return success
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -42,12 +91,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        guard let shortcut = shortcutItem else { return }
+        
+        quickActionHandler(shortcut)
+        
+        self.shortcutItem = nil
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
